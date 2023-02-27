@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-26 09:34:31 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUJJNEkxVEE7MjAyMy0wMi0yNjswOToxMDo1MCBQTTszMzEz"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUJJNEkxVEE7MjAyMy0wMi0yNjswOTozNDozMSBQTTsxOzM0MjY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="qty" type="Real" array="False" size=""/>
+            <declare name="ppt" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <output expression="&quot;enter number of tickets&quot;" newline="True"/>
+            <input variable="qty"/>
+            <if expression="qty &gt;= 25">
+                <then>
+                    <assign variable="ppt" expression="50"/>
+                </then>
+                <else>
+                    <if expression="qty &gt;= 10">
+                        <then>
+                            <assign variable="ppt" expression="60"/>
+                        </then>
+                        <else>
+                            <if expression="qty &gt;= 5">
+                                <then>
+                                    <assign variable="ppt" expression="70"/>
+                                </then>
+                                <else>
+                                    <assign variable="ppt" expression="75"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="total" expression="qty * ppt"/>
+            <output expression="&quot;for &quot; &amp;qty &amp;&quot; tickets, the price per ticket is: $&quot; &amp;ppt &amp;&quot;. The total comes up to: $&quot; &amp;total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

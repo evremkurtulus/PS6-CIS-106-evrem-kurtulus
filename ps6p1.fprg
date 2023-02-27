@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-26 08:29:03 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUJJNEkxVEE7MjAyMy0wMi0yNjswODowOTo1MCBQTTszMzIw"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUJJNEkxVEE7MjAyMy0wMi0yNjswODoyOTowMyBQTTsxOzM0Mjg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="qty" type="Real" array="False" size=""/>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <declare name="extprice" type="Real" array="False" size=""/>
+            <declare name="price" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <output expression="&quot;enter quantity of widgets.&quot;" newline="True"/>
+            <input variable="qty"/>
+            <if expression="qty &gt; 10000">
+                <then>
+                    <assign variable="price" expression="10"/>
+                </then>
+                <else>
+                    <if expression="qty &gt; 5000">
+                        <then>
+                            <assign variable="price" expression="20"/>
+                        </then>
+                        <else>
+                            <assign variable="price" expression="30"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="extprice" expression="price * qty"/>
+            <assign variable="tax" expression="extprice * 0.07"/>
+            <assign variable="total" expression="extprice + tax"/>
+            <output expression="&quot;for&quot; &amp;qty &amp;&quot; widget/s, the price is: $&quot; &amp;price &amp;&quot;, so, the extended price is: $&quot; &amp;extprice" newline="True"/>
+            <output expression="&quot;plus tax (7%): $&quot; &amp;tax" newline="True"/>
+            <output expression="&quot;the total for the order will be: $&quot; &amp;total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
